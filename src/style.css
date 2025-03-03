@@ -13,6 +13,7 @@ html, body {
 /* 背景色を黒に設定 */
 body {
   background: #000;
+  color: #fff;  /* テキストを白に設定 */
 }
 
 /* Three.jsのcanvasを画面いっぱいに表示 */
@@ -20,4 +21,63 @@ canvas {
   width: 100vw;  /* ビューポートの幅いっぱい */
   height: 100vh; /* ビューポートの高さいっぱい */
   display: block; /* インライン要素の余白を削除 */
+  position: fixed; /* キャンバスを固定位置に */
+  z-index: 1; /* ヘッダーとフッターの下に配置 */
+}
+
+/* ヘッダーのスタイル */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* 操作説明セクションのスタイル */
+section {
+  position: fixed;
+  top: 5rem;
+  left: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0.5rem;
+  z-index: 2;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+section ul {
+  list-style-position: inside;
+  padding-left: 0.5rem;
+}
+
+section li {
+  margin-bottom: 0.5rem;
+}
+
+section strong {
+  color: #00ff00;
+}
+
+/* フッターのスタイル */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  z-index: 2;
 } 
