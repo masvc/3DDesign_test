@@ -102,3 +102,4 @@ MIT
 - Three.js
 - Vite
 - その他、使用している3Dモデルの作者様
+https://sketchfab.com/3d-models/3d-ramen-e912b8f2da144a3fb997a3802df64806
