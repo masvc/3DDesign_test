@@ -1,0 +1,23 @@
+/* すべての要素のマージンとパディングをリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* パディングとボーダーを幅と高さに含める */
+}
+
+/* スクロールバーを非表示にする */
+html, body {
+  overflow: hidden;
+}
+
+/* 背景色を黒に設定 */
+body {
+  background: #000;
+}
+
+/* Three.jsのcanvasを画面いっぱいに表示 */
+canvas {
+  width: 100vw;  /* ビューポートの幅いっぱい */
+  height: 100vh; /* ビューポートの高さいっぱい */
+  display: block; /* インライン要素の余白を削除 */
+} 
