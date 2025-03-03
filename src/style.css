@@ -5,15 +5,21 @@
   box-sizing: border-box;  /* パディングとボーダーを幅と高さに含める */
 }
 
+/* フォントサイズの基準を設定 */
+html {
+  font-size: 16px;
+}
+
 /* スクロールバーを非表示にする */
 html, body {
   overflow: hidden;
 }
 
-/* 背景色を黒に設定 */
+/* 背景色を暖かみのある白に設定 */
 body {
-  background: #000;
-  color: #fff;  /* テキストを白に設定 */
+  background: #fff8f0;
+  color: #333;  /* テキストを暗めのグレーに設定 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Three.jsのcanvasを画面いっぱいに表示 */
@@ -23,6 +29,7 @@ canvas {
   display: block; /* インライン要素の余白を削除 */
   position: fixed; /* キャンバスを固定位置に */
   z-index: 1; /* ヘッダーとフッターの下に配置 */
+  touch-action: none; /* モバイルでのタッチ操作を最適化 */
 }
 
 /* ヘッダーのスタイル */
@@ -32,13 +39,16 @@ header {
   left: 0;
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 248, 240, 0.9);
   z-index: 2;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 header h1 {
   font-size: 1.5rem;
   text-align: center;
+  letter-spacing: 0.05em;
 }
 
 /* 操作説明セクションのスタイル */
@@ -46,15 +56,20 @@ section {
   position: fixed;
   top: 5rem;
   left: 1rem;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 0.5rem;
+  padding: 1.2rem;
+  background: rgba(255, 248, 240, 0.9);
+  border-radius: 0.8rem;
   z-index: 2;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 90vw;
 }
 
 section h2 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 section ul {
@@ -63,11 +78,13 @@ section ul {
 }
 
 section li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
 }
 
 section strong {
-  color: #00ff00;
+  color: #e65100;  /* オレンジ色に変更 */
+  font-weight: 600;
 }
 
 /* フッターのスタイル */
@@ -76,8 +93,62 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 0.5rem;
-  background: rgba(0, 0, 0, 0.7);
+  padding: 0.8rem;
+  background: rgba(255, 248, 240, 0.9);
   text-align: center;
   z-index: 2;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  font-size: 0.9rem;
+}
+
+/* モバイル端末向けのスタイル調整 */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  section {
+    top: auto;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  section li {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* 小さなモバイル端末向けの追加調整 */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 0.8rem;
+    bottom: 3.5rem;
+  }
+
+  footer {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
 } 
